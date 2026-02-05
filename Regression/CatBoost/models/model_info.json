@@ -1,0 +1,92 @@
+{
+  "latency_models": {
+    "avg_upload_ms": {
+      "model_file": "models\\avg_upload_ms.cbm",
+      "metrics": {
+        "mae": 54.21271709345875,
+        "rmse": 124.76050760252988,
+        "r2": 0.3978583924757384
+      }
+    },
+    "p95_upload_ms": {
+      "model_file": "models\\p95_upload_ms.cbm",
+      "metrics": {
+        "mae": 85.20076257570587,
+        "rmse": 191.19876643831347,
+        "r2": 0.3682745393594895
+      }
+    },
+    "avg_download_ms": {
+      "model_file": "models\\avg_download_ms.cbm",
+      "metrics": {
+        "mae": 21.691047134317078,
+        "rmse": 53.02361258708982,
+        "r2": 0.16548676905451754
+      }
+    },
+    "p95_download_ms": {
+      "model_file": "models\\p95_download_ms.cbm",
+      "metrics": {
+        "mae": 34.11071152209094,
+        "rmse": 76.94945532633714,
+        "r2": 0.16580982579438375
+      }
+    }
+  },
+  "recon_model": {
+    "model_file": "models\\reconstruction_time_ms.cbm",
+    "metrics": {
+      "mae": 32.481978927837055,
+      "rmse": 63.82879089327476,
+      "r2": 0.5425671312165852
+    }
+  },
+  "params": {
+    "loss_function": "RMSE",
+    "random_seed": 42,
+    "iterations": 2000,
+    "learning_rate": 0.05,
+    "depth": 8,
+    "l2_leaf_reg": 3.0,
+    "eval_metric": "RMSE",
+    "od_type": "Iter",
+    "od_wait": 100,
+    "allow_writing_files": false
+  },
+  "features": [
+    "policy_name",
+    "file_size_mb",
+    "num_objects",
+    "concurrency",
+    "read_ratio",
+    "failure_state",
+    "total_mb",
+    "read_mb",
+    "write_mb",
+    "per_thread_mb",
+    "io_intensity",
+    "payload_bytes",
+    "data_disks_used_pct_before",
+    "mem_available_kb_before",
+    "load1_before",
+    "cpu_steal_pct_before",
+    "runnable_procs",
+    "dirty_kb",
+    "writeback_kb",
+    "swap_activity_delta",
+    "disk_reads_delta_max",
+    "disk_writes_delta_max",
+    "disk_io_time_ms_delta_max",
+    "disk_weighted_io_time_delta_max",
+    "disk_sectors_rw_delta_max",
+    "failed_disks",
+    "failed_nodes",
+    "failure_disk",
+    "time_since_last_failure_s"
+  ],
+  "categoricals": [
+    "policy_name",
+    "failure_disk"
+  ],
+  "target_transform": "log1p"
+}

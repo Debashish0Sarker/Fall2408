@@ -1,0 +1,36 @@
+{
+  "n_contexts": 600,
+  "top1_accuracy": 0.5566666666666666,
+  "top3_accuracy": 0.87,
+  "actual_regret_mean": 122.19576946231307,
+  "actual_regret_median": 0.0,
+  "actual_regret_p95": 551.9377316379624,
+  "transform": "log1p",
+  "group_cols": [
+    "workload_id"
+  ],
+  "policies_considered": [
+    "EC-10-4",
+    "EC-2-2",
+    "EC-3-2",
+    "EC-4-2",
+    "EC-4-3",
+    "EC-5-3",
+    "EC-6-3",
+    "EC-7-3",
+    "EC-8-3",
+    "EC-8-4"
+  ],
+  "weights": {
+    "avg_upload_ms": 1.0,
+    "p95_upload_ms": 2.0,
+    "avg_download_ms": 1.0,
+    "p95_download_ms": 2.0,
+    "reconstruction_time_ms": 1.5
+  },
+  "notes": [
+    "REAL-ROW evaluation: no synthetic context vectors are created.",
+    "Scores are averaged per (context, policy) over real measured rows (actual) and model predictions (pred).",
+    "actual_regret = actual_score_mean(pred_best_policy) - actual_score_mean(actual_best_policy) and is >= 0."
+  ]
+}

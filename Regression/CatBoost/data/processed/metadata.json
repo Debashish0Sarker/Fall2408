@@ -1,0 +1,83 @@
+{
+  "input_file": "data\\raw\\dataset.csv",
+  "rows_raw": 30000,
+  "rows_base": 30000,
+  "rows_recon": 12000,
+  "feature_cols": [
+    "policy_name",
+    "file_size_mb",
+    "num_objects",
+    "concurrency",
+    "read_ratio",
+    "failure_state",
+    "total_mb",
+    "read_mb",
+    "write_mb",
+    "per_thread_mb",
+    "io_intensity",
+    "payload_bytes",
+    "data_disks_used_pct_before",
+    "mem_available_kb_before",
+    "load1_before",
+    "cpu_steal_pct_before",
+    "runnable_procs",
+    "dirty_kb",
+    "writeback_kb",
+    "swap_activity_delta",
+    "disk_reads_delta_max",
+    "disk_writes_delta_max",
+    "disk_io_time_ms_delta_max",
+    "disk_weighted_io_time_delta_max",
+    "disk_sectors_rw_delta_max",
+    "failed_disks",
+    "failed_nodes",
+    "failure_disk",
+    "time_since_last_failure_s"
+  ],
+  "categorical_cols": [
+    "policy_name",
+    "failure_disk"
+  ],
+  "meta_cols": [
+    "workload_id"
+  ],
+  "targets": [
+    "avg_upload_ms",
+    "p95_upload_ms",
+    "avg_download_ms",
+    "p95_download_ms",
+    "reconstruction_time_ms"
+  ],
+  "dropped_cols": [
+    "cpu_util_pct_during_run",
+    "data_disks_used_pct_after",
+    "data_disks_used_pct_delta",
+    "download_success_rate",
+    "download_throughput_mbps",
+    "ec_k",
+    "ec_m",
+    "efficiency",
+    "net_rx_bytes_delta",
+    "net_tx_bytes_delta",
+    "run_id",
+    "storage_overhead",
+    "timestamp",
+    "total_download_bytes",
+    "total_upload_bytes",
+    "upload_success_rate",
+    "upload_throughput_mbps"
+  ],
+  "dropped_constant_cols": [],
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "grouping": "workload_id",
+    "include_workload_id_as_feature": false
+  },
+  "notes": [
+    "workload_id kept in train_base.csv as META for evaluation grouping (not used as feature unless include_workload_id_as_feature).",
+    "Explicit allowlist used to avoid leakage.",
+    "Leaky/post-run columns force-dropped.",
+    "reconstruction_time_ms model trains only on failure_state==1 rows."
+  ]
+}

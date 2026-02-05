@@ -1,0 +1,35 @@
+﻿{
+  "file_size_mb": 5,
+  "num_objects": 20,
+  "concurrency": 2,
+  "read_ratio": 0.5,
+  "failure_state": 1,
+
+  "total_mb": 100,
+  "read_mb": 50,
+  "write_mb": 50,
+  "per_thread_mb": 50,
+  "io_intensity": 200,
+  "payload_bytes": 5242880,
+
+  "data_disks_used_pct_before": 35.0,
+  "mem_available_kb_before": 800000,
+  "load1_before": 1.2,
+
+  "cpu_steal_pct_before": 0.5,
+  "runnable_procs": 2,
+  "dirty_kb": 256,
+  "writeback_kb": 64,
+  "swap_activity_delta": 0,
+
+  "disk_reads_delta_max": 120,
+  "disk_writes_delta_max": 240,
+  "disk_io_time_ms_delta_max": 30,
+  "disk_weighted_io_time_delta_max": 80,
+  "disk_sectors_rw_delta_max": 4096,
+
+  "failed_disks": 1,
+  "failed_nodes": 1,
+  "failure_disk": "d2",
+  "time_since_last_failure_s": 60
+}
