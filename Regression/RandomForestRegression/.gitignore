@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# ML artifacts
+*.joblib
+*.pkl
+*.pt
+*.h5
+*.onnx
+
+# Experiment outputs
+rf_artifacts/
+dataset_analysis/outputs/
+*.png
+*.zip
+
+# Large datasets
+dataset_30k.csv
+cleaned.csv

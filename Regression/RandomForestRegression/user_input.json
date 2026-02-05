@@ -1,0 +1,8 @@
+{
+  "file_size_mb": 10,
+  "num_objects": 50,
+  "concurrency": 8,
+  "read_ratio": 0.7,
+  "failure_state": 1,
+  "failure_disk": "d1"
+}
